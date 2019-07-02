@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+</head>
+<style>
+   #tsj{
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 48px;
+      height: 48px;
+      background:url("../img/animation.png");
+      animation: move 1s .5s steps(12) infinite both;
+   }
+   @keyframes move {
+      from{
+            background-position: 0;
+      }
+      to{
+         background-position: -576px;
+      }
+   }
+</style>
+
+<body>
+<div id="tsj"></div>
+</body>
+</html>

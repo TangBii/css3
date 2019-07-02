@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>计算杜邦恒等式</title>
+   <script type="text/javascript">
+      window.onload=function () {
+        var btn01=document.getElementById("btn01")
+        btn01.onclick=function () {
+          var nums=document.getElementsByClassName("num")
+          var a=((nums[0].value*1)/(nums[1].value*1)).toFixed(3)
+          var b=((nums[1].value*1)/(nums[2].value*1)).toFixed(3)
+          var c=((nums[2].value*1)/(nums[3].value*1)).toFixed(3)
+          var d=(((nums[0].value*1)/(nums[1].value*1))*((nums[1].value*1)/(nums[2].value*1))*((nums[2].value*1)/(nums[3].value*1))).toFixed(4)*100+'%'
+          alert("销售利润率:"+a)
+          alert("总资产周转率:"+b)
+          alert("权益乘数:"+c)
+          alert("ROE:"+d)
+
+        }
+      }
+
+   </script>
+</head>
+<body>
+<label>
+   <input class="num" type="text" placeholder="净利润"><br>
+</label>
+<label>
+   <input class="num"  type="text" placeholder="销售额"><br>
+</label>
+<label>
+   <input class="num"  type="text" placeholder="资产"><br>
+</label>
+<label>
+   <input class="num"  type="text" placeholder="总权益"><br>
+</label>
+
+<label>
+   <input id="btn01" type="button" value="计算"><br>
+</label>
+</body>
+</html>

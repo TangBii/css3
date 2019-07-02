@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+</head>
+<style>
+   * {
+      padding: 0;
+      margin: 0;
+   }
+
+   #wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -100px;
+      margin-top: -100px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: solid 1px;
+   }
+
+   #wrap .hour {
+      position: absolute;
+      left: 99px;
+      top:60px;
+      width: 2px;
+      height: 40px;
+      background-color: red;
+      transform-origin: center 40px;
+   }
+
+   #wrap .min {
+      position: absolute;
+      left: 99px;
+      top:40px;
+      width: 2px;
+      height: 60px;
+      background-color: pink;
+      transform-origin: center 60px;
+
+   }
+
+   #wrap .sec {
+      position: absolute;
+      left: 99px;
+      top:20px;
+      width: 2px;
+      height: 80px;
+      background-color: deepskyblue;
+      transform-origin: center 80px;
+
+   }
+   #wrap .icon{
+      position: absolute;
+      left:95px;
+      top:95px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: blueviolet;
+   }
+   #wrap .scale{
+      list-style: none;
+   }
+   #wrap .scale>li{
+      position: absolute;
+      left: 99.5px;
+      width: 1px;
+      height: 8px;
+      transform-origin: center 100px;
+      background-color: black;
+   }
+   #wrap .scale>li:nth-child(5n+1){
+      height: 12px;
+   }
+   #wrap .scale>li:nth-child(1)::after{
+      content: "12";
+   }
+</style>
+<script type="text/javascript">
+  window.onload=function () {
+    var ulNode=document.querySelector("#wrap .scale")
+    var styleNode=document.createElement("style")
+    var hour=document.querySelector("#wrap .hour")
+    var min=document.querySelector("#wrap .min")
+    var sec=document.querySelector("#wrap .sec")
+    for(var i=0;i<60;i++){
+      ulNode.innerHTML+="<li></li>"
+      styleNode.innerHTML+="#wrap .scale>li:nth-child("+(i+1)+"){transform:rotate("+(i*6)+"deg);}"
+    }//for
+    for(i=1;i<61;i++){
+      styleNode.innerHTML+="#wrap .scale>li:nth-child("+(5*i+1)+")::after{content:'"+i+"';}"
+    }
+    document.head.appendChild(styleNode)
+    move()
+    setInterval(move,1000)
+    function move() {
+      var date=new Date()
+      var s=date.getSeconds()
+      var m=date.getMinutes()+s/60
+      var h=date.getHours()+s/3600+m/60
+      sec.style.transform="rotate("+s*6+"deg)"
+      min.style.transform="rotate("+m*6+"deg)"
+      hour.style.transform="rotate("+h*30+"deg)"
+
+    }
+  }//window.onload
+</script>
+<body>
+<div id="wrap">
+   <div class="hour"></div>
+   <div class="min"></div>
+   <div class="sec"></div>
+   <div class="icon"></div>
+   <ul class="scale"></ul>
+</div>
+</body>
+</html>

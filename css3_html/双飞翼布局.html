@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      padding:0;
+      margin:0;
+    }
+    body{
+      min-width: 600px;
+    }
+    .clearfix:after{
+      content:' ';
+      display: block;
+      clear: both;
+    }
+    #footer,#header{
+      height: 20px;
+      text-align: center;
+      background: darkgrey;
+      border: 1px solid;
+    }
+    #content{
+      overflow: hidden;
+    }
+    #content .innerMiddle{
+      padding: 0 200px;
+    }
+    #content .middle,#content .left,#content .right{
+      float: left;
+      text-align: center;
+      padding-bottom: 10000px;
+      margin-bottom: -10000px;
+    }
+    #content .left,#content .right{
+      background: pink;
+      width: 200px;
+    }
+    #content .middle{
+      background: deeppink;
+      width: 100%;
+    }
+    #content .left{
+      margin-left: -100%;
+    }
+    #content .right{
+      margin-left: -200px;
+    }
+  </style>
+</head>
+<body>
+<div id="header">header</div>
+<div id="content" class="clearfix">
+  <div class="middle"><div class="innerMiddle">middle</div></div>
+  <div class="left">left</div>
+  <div class="right">right</div>
+</div>
+<div id="footer">footer</div>
+
+</body>
+</html>

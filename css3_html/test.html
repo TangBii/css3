@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+      }
+      html,body{
+         height: 100%;
+         overflow: hidden;
+      }
+      #wrap{
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         margin: auto;
+         width: 300px;
+         height: 300px;
+         border: 1px solid;
+      }
+      #test{
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         margin: auto;
+         width: 100px;
+         height: 100px;
+         border-radius: 50%;
+         background: pink;
+         text-align: center;
+         font: 15px/100px cursive;
+         /*测试代码*/
+         animation: move 6s steps(6,end) both  alternate 3;
+      }
+      @keyframes move {
+         0%{
+            transform: translateY(-100px);
+         }
+         100%{
+            transform: translateY(100px);
+         }
+      }
+   </style>
+</head>
+<body>
+<div id="wrap">
+   <div id="test">hello_world</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <style>
+      html{
+         height: 100%;
+         width: 100%;
+      }
+      body{
+         height: 60%;
+         width: 100%;
+         border:1px solid;
+         margin-top:60px;
+      }
+      #test{
+         position: absolute;
+         height: 100px;
+         width: 100px;
+         border-radius: 50%;
+         left: 50%;
+         top:50%;
+         margin-left: -50px;
+         margin-top: -50px;
+         background: pink;
+         transition:  2s;
+      }
+      #test:hover{
+         height: 50px;
+         width: 50px;
+      }
+   </style>
+</head>
+<body>
+   <div id="test"></div>
+</body>
+<script type="text/javascript">
+  var test=document.querySelector("#test")
+   test.onwebkittransitionend=function () {
+     alert(1)
+   }
+</script>
+</html>

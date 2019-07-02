@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <style>
+      #wrap{
+         height: 300px;
+         width: 50px;
+         margin: 10px auto;
+         border: 1px solid;
+         overflow: hidden;
+      }
+      #inner{
+         height: 600px;
+         width: 50px;
+         background-image: repeating-linear-gradient(135deg,black 0px,black 15px,white 15px,white 30px);
+      }
+   </style>
+   <script type="text/javascript">
+     window.onload=function(){
+       var inner=document.getElementById("inner");
+       var flag=0;
+       setInterval(function () {
+         if(flag===600)
+           flag=0;
+         flag=flag+3;
+         inner.style.marginTop=-flag+"px";
+       },100)
+     }//window
+   </script>
+</head>
+<body>
+<div id="wrap">
+   <div id="inner"></div>
+</div>
+</body>
+</html>

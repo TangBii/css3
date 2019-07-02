@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+</head>
+<style>
+   html,body{
+      height: 100%;
+      overflow: hidden;
+      text-align: center;
+      background-color: black;
+   }
+   #test{
+      display:inline-block;
+      font: bold 80px "微软雅黑";
+      color: rgba(255,255,255,.3);
+      background-image: linear-gradient(110deg,rgba(255,255,255,0) 22px,rgba(255,255,255,1)48px,rgba(255,255,255,0)85px);
+      -webkit-background-clip:text;
+   }
+</style>
+<body>
+   <h1 id="test">Hello_World</h1>
+</body>
+<script type="text/javascript">
+  var test=document.getElementById("test")
+  var flag=0
+  setInterval(function () {
+    flag+=5
+    if(flag>1300)
+      flag=0
+   test.style.backgroundPosition=flag+"px"
+
+  },30)
+</script>
+</html>

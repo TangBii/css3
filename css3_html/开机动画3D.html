@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <meta name="viewport" content="width=device-width,initial scale=1.0,user-scalabe=no">
+   <style>
+      *{
+         padding: 0;
+         margin: 0;
+      }
+      html,body{
+         height: 100%;
+         overflow: hidden;
+      }
+      #wrap{
+         height: 100%;
+         perspective: 200px;
+         background: #8b102a;
+      }
+      #wrap .inner{
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate3d(-50%,-50%,0);
+         transform-style: preserve-3d;
+      }
+      #wrap .inner>img,#wrap .inner>p{
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate3d(-50%,-50%,0) rotateY(0deg);
+      }
+      #wrap .inner>img{
+         width: 30%;
+         margin-top:-28px;
+         animation: circle 3s  linear infinite;
+      }
+      @keyframes circle {
+         from
+         {transform:translate3d(-50%,-50%,0) rotateY(0);}
+         to
+         {transform: translate3d(-50%,-50%,0) rotateY(360deg);}
+      }
+      #wrap .inner>p{
+         color: white;
+         margin-top:28px;
+      }
+   </style>
+   <script type="text/javascript" src="../js/data.js"></script>
+   <script type="text/javascript">
+      window.onload=function () {
+        var flag=0
+        var pNode=document.querySelector("#wrap .inner>p")
+        var array=[]
+        for(items in imgData) {
+          array = array.concat(imgData[items])
+        }
+        for(var i=0;i<array.length;i++){
+          var img=new Image()
+          img.src=array[i]
+          img.onload=function () {
+            flag++
+            pNode.innerHTML="已加载"+(Math.round(flag/array.length*100 ))+"%"
+          }
+        }
+
+      }
+
+   </script>
+</head>
+<body>
+   <div id="wrap">
+      <div class="inner">
+         <img src="../img/load/logo3.png" alt="">
+         <p>已加载0%</p>
+      </div>
+   </div>
+</body>
+</html>

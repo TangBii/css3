@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      min-width: 600px;
+    }
+
+    #header, #footer {
+      height: 20px;
+      text-align: center;
+      background: darkgrey;
+      border: 1px solid;
+    }
+
+    .clearfix:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+
+    #content {
+      padding: 0 200px;
+      overflow: hidden;
+    }
+
+    #middle, #left, #right {
+      margin-bottom: -10000px;
+      padding-bottom: 10000px;
+      text-align: center;
+    }
+
+    #middle {
+      float: left;
+      width: 100%;
+      background: darkslategray;
+    }
+
+    #left {
+      position: relative;
+      left: -200px;
+      float: left;
+      margin-left: -100%;
+      width: 200px;
+      background: pink;
+    }
+
+    #right {
+      position: relative;
+      right: -200px;
+      float: right;
+      margin-left: -200px;
+      width: 200px;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+<div id="header">header</div>
+<div id="content" class="clearfix">
+  <div id="middle">middle</div>
+  <div id="left"></div>
+  <div id="right">right</div>
+</div>
+<div id="footer">footer</div>
+</body>
+</html>

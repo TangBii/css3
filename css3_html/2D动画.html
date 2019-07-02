@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <style>
+      html,body{
+         height: 100%;
+         overflow: hidden;
+      }
+      body{
+         height:60%;
+         width: 80%;
+         border: 1px solid;
+         margin:60px auto;
+         position: relative;
+      }
+       #test{
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          background: pink;
+          border-radius:50%;
+          left: 0;
+          bottom:0;
+          top:0;
+          right:0;
+          margin: auto;
+          text-align: center;
+          font: 20px/150px "微软雅黑";
+         transition:2s;
+       }
+      body:hover #test{
+         transform:scale(.2);
+      }
+   </style>
+</head>
+<body>
+<div id="test">hello_world</div>
+</body>
+</html>
