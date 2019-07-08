@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>body</title>
+   <style>
+      fieldset{
+         border: 0;
+         padding: 0;
+         margin: 0;
+         min-width: 0;
+         display: table-cell;
+      }
+      input, textarea{
+         font: inherit;
+      }
+      .field-text{
+         max-width: 20em;
+      }
+      .field-text label{
+         cursor: pointer;
+      }
+      .field-text label, .field-text input, .field-text textarea{
+         width: 100%;
+         box-sizing: border-box;
+      }
+      .comments_wrap{
+         padding: 1em;
+         margin-bottom: 1em;
+         border:1px solid #eee;
+         background-color: #fff;
+         box-shadow: 0 0 4px rgba(0,0,0,0.25);
+      }
+      .field-text input, .field-text textarea{
+         padding: .375em .3125em .3125em;
+         border: 1px solid #ccc;
+         border-radius: .25em;
+      }
+      .field-text input:focus, .field-text textarea:focus{
+
+         box-shadow: 0 0 .5em orange;
+         border-color: #5da2f8;
+         outline: 0;
+         border: 0;
+      }
+      input[type = 'radio']{
+         margin-right: .75em;
+      }
+      button{
+         cursor: pointer;
+         border: 0;
+         padding: .5em 1em;
+         color: #fff;
+         border-radius: .25em;
+         font-size: 1em;
+         background-color: #173b6d;
+         background-image: linear-gradient(to bottom, #1a4a8e, #173b6d);
+         box-shadow: 0 0 0 rgba(23,59,109,.3) ,inset 0 1px 0 rgba(0,0,0,.3);
+      }
+      button:focus{
+         background-color: rebeccapurple;
+         background-image: linear-gradient(to bottom, #2063c0, #1d4d90);
+         box-shadow: 0 0 0 rgba(23,59,109,.3) ,inset 0 1px 0 rgba(0,0,0,.3);
+      }
+   </style>
+</head>
+<body>
+<form action="#" id="comments_form">
+   <div class="comments_wrap">
+      <fieldset>
+         <legend>Your Contact Details</legend>
+         <p class="field field-text">
+            <label for="comment_author">Name:</label>
+            <input type="text" name="comment_author" id="comment_author">
+         </p>
+         <p class="field field-text">
+            <label for="comment_email">Email Address:</label>
+            <input type="text" name="comment_email" id="comment_email">
+         </p>
+         <p class="field field-text">
+            <label for="comment_url">Web Address:</label>
+            <input type="text" name="comment_url" id="comment_url">
+         </p>
+         <p class="field field-text">
+            <label for="comment_advice">Your Advice:</label>
+            <textarea name="comment_advice" id="comment_advice" cols="10" rows="4"></textarea>
+         </p>
+      </fieldset>
+      <fieldset>
+         <legend>Rember Me:</legend>
+         <p class="field ">
+            <label><input type="radio" name="comment_remember">Yes</label>
+            <label><input type="radio" name="comment_remember">No</label>
+         </p>
+      </fieldset>
+      <button>Post Comment</button>
+   </div>
+</form>
+</body>
+</html>
